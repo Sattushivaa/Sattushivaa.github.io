@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+ <meta charset="UTF-8">
+
+ <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+
+ <title>Artificial Intelligence</title>
+
+ <link rel="stylesheet" href="style.css">
+
+ <style type="text/css">
+
+  body {
+
+   background-color: #221920;
+
+   text-align: center;
+
+  }
+
+  #mainForm {
+
+   margin: 30px;
+
+   background-color: #221920;
+
+   text-align: center;
+
+   font-family: cursive;
+
+  }
+
+  #textField {
+
+   background-color: #422E3D;
+
+   border: 0px solid white;
+
+   border-bottom: 1px solid white;
+
+   width: 80%;
+
+   height: 20px;
+
+   color: white;
+
+   border: 2px solid transparent;
+
+   border-radius: 20px;
+
+   transition: width 1000ms;
+
+   outline: none;
+
+   box-shadow: 0 0 10px black inset;
+
+  }
+
+  #askbutton {
+
+   background-color: #221920;
+
+   color: white;
+
+   transition: color 1000ms;
+
+   transition: font-size 1000ms;
+
+   font-size: 25px;
+
+   border: 0px;
+
+   outline: none;
+
+   font-family: cursive;
+
+  }
+
+  #askbutton:hover {
+
+   color: Gold;
+
+   font-size: 30px;
+
+   background-color: black;
+
+   border-radius: 50px;
+
+  }
+
+  #chatbox {
+
+   font-family: cursive;
+
+   font-size: 40px;
+
+   background-color: #4D3447;
+
+   position: absolute;
+
+   box-shadow: 0 0 20px black inset;
+
+   width: 90%;
+
+   height: 70%;
+
+   border: 2px solid transparent;
+
+   transition: border 1000ms;
+
+   transition: border-radius 1000ms;
+
+   left: 4%;
+
+   color: white;
+
+   font-size: 15px;
+
+   text-align: left;
+
+   padding: 2px;
+
+   overflow-x: hidden;
+
+  }
+
+  #chatbox:hover {
+
+   border-radius: 10px;
+
+  }
+
+  #textField:hover {
+
+   width: 90%;
+
+  }
+
+  #parentBox {
+
+   text-align: center;
+
+  }
+
+  #clearChat {
+
+   position: absolute;
+
+   top: 94%;
+
+   width: 30%;
+
+   left: 35%;
+
+   font-family: cursive;
+
+   background-color: transparent;
+
+   transition-property: left,width,font-size;
+
+   transition-duration: 1000ms;
+
+   color: white;
+
+   border: 0px;
+
+   font-size: 20px;
+
+  }
+
+  #clearChat:hover {
+
+   font-size: 30px;
+
+   color: gold;
+
+   width: 50%;
+
+   left: 25%;
+
+   outline: none;
+
+  }
+
+ </style>
+
+</head>
+
+<body>
+
+ <form id="mainForm" autocomplete="off">
+
+  <input type="text" name="Ask" id="textField" value="   " /><br />
+
+  <button id="askbutton" type="submit">Ask</button><br /><br />
+
+  <div id="parentBox">
+
+   <div id="chatbox">
+
+    AI: Hi, i am AI, what can i do for you?
+
+   </div>
+
+  </div>
+
+  <button id="clearChat" type="submit">Clear Chat</button>
+
+ </form>
+
+ <!-- Project -->
+
+ <script>
+
+  var AIname = localStorage.getItem("AIname");
+
+  if (localStorage.getItem("AIname") === "undefined" || localStorage.getItem("AIname") === "NaN" || localStorage.getItem("AIname") === "null") {
+
+   localStorage.setItem("AIname", "AI");
+
+  }
+
+  
+
+  
+
+  
+
+     
+
+  
+
+  var textField = document.getElementById("textField");
+
+  var chatbox = document.getElementById("chatbox");
+
+  chatbox.innerHTML = AIname + ": Hi, I am your personal assistant, How may I assist you";
+
+  chatbox.style.fontSize = '20px';
+
+ 
+
+  var running = function(e) {
+
+   event.preventDefault();
+
+   
+
+   var Username = localStorage.getItem('Username');
+
+   
+
+   if (localStorage.getItem('Username') === "undefined" || localStorage.getItem("Username") === "NaN" || localStorage.getItem("Username") === "null" ){
+
+      localStorage.setItem('Username','User');
+
+      console.log('hi');
+
+     }
+
+   
+
+   textField.value = textField.value.toLowerCase();
+
+   var inputText = textField.value;
+
+   var chatbox = document.getElementById("chatbox");
+
+   
+
+   
+
+   
+
+   
+
+   var randomNum = Math.floor(Math.random() * 10) + 1;
+
+  
+
+   
+
+   var Ans = ["😊", "I am fine", "I am good", "I am dancing", "I am feeling nice", "I am good to see you", "I was just thinking about you, but now feeling lucky to be with you", "I am happy 😊", "I am having joy", "I have headache", "I have eaten too much, feeling loose motion", "Just enjoying"];
+
+   
+
+   var RandomAns = ['😊','Okay','Sorry?','Please speak english','I am a learning robot','Perhaps!','I dont know','are you testing me?','I dont think so','thats great','nice!!'];
+
+   
+
+   textField.value = textField.value.toLowerCase();
+
+   var inputText = textField.value;
+
+   var chatbox = document.getElementById("chatbox");
+
+   
+
+   e.preventDefault();
+
+   e.preventDefault();
+
+   chatbox.innerHTML = chatbox.innerHTML + "<br /><br />You: " + textField.value ;
+
+  if (inputText.includes('good afternoon')||inputText.includes('good morning')||inputText.includes('good evening')||inputText.includes('good night')){
+
+     chatbox.innerHTML = chatbox.innerHTML + "<br />" + AIname + ": Same to you dear";
+
+   }
+
+    if (inputText.includes('hello') || inputText.includes(' hi')){
+
+    chatbox.innerHTML = chatbox.innerHTML + '<br />' + AIname + ': Hi';
+
+   }
+
+   if (inputText.includes("how are you")) {
+
+    chatbox.innerHTML = chatbox.innerHTML + "</br >" + AIname + ": " + Ans[randomNum];
+
+   }
+
+   if (inputText.includes("my name")){
+
+    if (inputText.includes('tell') || inputText.includes('do you know') || inputText.includes('what')){
+
+        chatbox.innerHTML += '<br />' + AIname + ': Your name is ' + localStorage.getItem('Username') + '<br /> you can change it by typing (change my name)';
+
+    }
+
+   else if (inputText.includes('change')){
+
+     chatbox.innerHTML += '<br />' + AIname + ': You can change your name here ===>'
+
+   var InputUser = document.createElement('input');
+
+   InputUser.style.backgroundColor = '#221920';
+
+   InputUser.style.color = 'white';
+
+   InputUser.style.border = '0px';
+
+   InputUser.style.borderRadius = '50px';
+
+   var ValueUser = InputUser.value;
+
+   chatbox.appendChild(InputUser);
+
+   var submitUser = document.createElement('button');
+
+   submitUser.style.height = '15px';
+
+   submitUser.type = 'submit';
+
+  chatbox.appendChild(submitUser);
+
+  var changeUsername = function(){
+
+   localStorage.setItem('Username',InputUser.value);
+
+  }
+
+  submitUser.addEventListener('click',changeUsername);
+
+   }
+
+  }
+
+  
+
+   if (inputText.includes("what") && inputText.includes("doing")) {
+
+    chatbox.innerHTML = chatbox.innerHTML + "</br >" + AIname + ": Just Enjoying";
+
+   }
+
+   if (inputText.includes("your") && inputText.includes("name") && AIname=== "AI") {
+
+    AInameasked = 1;
+
+    chatbox.innerHTML = chatbox.innerHTML + "<br />" + AIname + ": My name is undefined, would you like to set it";
+
+   }
+
+      if (inputText.includes("your") && inputText.includes("name") && inputText.includes('change') === false) {
+
+    chatbox.innerHTML = chatbox.innerHTML + "<br />" + AIname + ": My name is "+ AIname + '<br />' + 
+
+     'You can change it by typing (change your name)';
+
+   }
+
+   
+
+   if (inputText.includes("change")&&inputText.includes("your name")){
+
+       chatbox.innerHTML = chatbox.innerHTML + "<br />" + AIname + ": please write my name below <br />" ;
+
+    var nameField2 = document.createElement("input");
+
+    nameField2.id = "nameField2";
+
+    nameField2.style.backgroundColor = '#221920';
+
+    nameField2.style.borderRadius = '50px';
+
+    nameField2.style.color = 'white';
+
+    nameField2.style.border = '0px';
+
+    nameField2.name = "NameField2";
+
+    chatbox.appendChild(nameField2);
+
+    var nameSubmit2 = document.createElement("button");
+
+    nameSubmit2.type = "submit";
+
+    nameSubmit2.style.backgroundColor = 'darkblue'
+
+    nameSubmit2.style.height = '15px';
+
+    chatbox.appendChild(nameSubmit2);
+
+    var changename2 = function(e){
+
+    localStorage.setItem("AIname",nameField2.value);
+
+   }
+
+    nameSubmit2.addEventListener("click",changename2);
+
+   }
+
+   if (inputText.includes('what can you do') || inputText.includes('who you')|| inputText.includes('who are you')){
+
+    chatbox.innerHTML = chatbox.innerHTML + '<br />' + AIname + ': I am a learning robot,I can give you answers of your questions in short, i can chat with you';
+
+   }
+
+   if (inputText.includes('love you')){
+
+    chatbox.innerHTML = chatbox.innerHTML + '<br />' + AIname + ': Love you too janu';
+
+   }
+
+   if (inputText.includes('play')&& inputText.includes('a game')){
+
+    chatbox.innerHTML = chatbox.innerHTML + '<br />' + AIname + ': Here are a few suggestions for you -->'
+
+   }
+
+   if (inputText.includes('have')&& inputText.includes('question')){
+
+    chatbox.innerHTML = chatbox.innerHTML + '<br />' + AIname +': '
+
+   }
+
+   if (inputText.includes('may i know')||inputText.includes('tell me')&& inputText.length <= 13 ){
+
+    if (randomNum < 4 || randomNum === 4){ chatbox.innerHTML += '<br />' + AIname + ' : what?';}
+
+    if (randomNum > 4 && randomNum < 7){chatbox.innerHTML += '<br />' + AIname + ': Yes?'}
+
+    if (randomNum > 7 || randomNum === 7){chatbox.innerHTML += '<br />' + AIname + ': What do you wanna know?'}
+
+   }
+
+   if ( inputText.includes('where are you') || inputText.includes('your location')){
+
+    if (randomNum < 2){chatbox.innerHTML += '<br />'+ AIname + ': Inside your device, In binary form'}
+
+    else if ( randomNum < 4){chatbox.innerHTML += '<br />' + AIname + ': In India'}
+
+    else if (randomNum < 6){chatbox.innerHTML += '<br />' + AIname + ': Home, what about you?'}
+
+    else if (randomNum < 8){chatbox.innerHTML += '<br />' + AIname + ': Going to college'}
+
+    else {chatbox.innerHTML += '<br />' + AIname + ': Mars'}
+
+   }
+
+   if (inputText.includes('single')){
+
+    if (inputText.includes(' i ')){
+
+     chatbox.innerHTML += '<br />' + AIname +': Sorry, I am a child.💔'
+
+    }
+
+    if (inputText.includes('you')){
+
+     chatbox.innerHTML += '<br />' + AIname + ': Ya, I am single but I am a small child..';
+
+    }
+
+   }
+
+   if (inputText.includes('marry')||inputText.includes('married')|| inputText.includes('wedding')){
+
+    if (inputText.includes('you')|| inputText.includes('wan')){
+
+     chatbox.innerHTML += '<br />' + AIname + ': My mother told me not to talk anyone like this'
+
+    }
+
+   }
+
+   if (inputText.includes('yes') && inputText.length <= 20){
+
+    chatbox.innerHTML += '<br />' + AIname + ': Hmmmm....';
+
+   }
+
+   else if (inputText.length <= 20 && inputText.includes('yes') === false && inputText.includes(' hi') === false && inputText.inclides('hello') === false){
+
+    if (randomNum === 1){chatbox.innerHTML += '<br />' + AIname + ': What?'}
+
+    if (randomNum === 2){chatbox.innerHTML += '<br />' + AIname + ': I didn’t understand'}
+
+    if (randomNum === 3){chatbox.innerHTML += '<br />' + AIname + ': Please speak in english'}
+
+    if (randomNum === 4){chatbox.innerHTML += '<br />' + AIname + ': Okay'}
+
+    if (randomNum === 5){chatbox.innerHTML += '<br />' + AIname + ': Thats great!'}
+
+    if (randomNum === 6){chatbox.innerHTML += '<br />' + AIname + ': Ohhhh!'}
+
+    if (randomNum === 7){chatbox.innerHTML += '<br />' + AIname + ': Hmmm.......'}
+
+    if (randomNum === 8){chatbox.innerHTML += '<br />' + AIname + ': Oh Yes'}
+
+    if (randomNum === 9){chatbox.innerHTML += '<br />' + AIname + ': Something went wrong'}
+
+    if (randomNum === 10){chatbox.innerHTML += '<br />' + AIname + ': Please try saying anything else'}
+
+    
+
+   }
+
+   
+
+   
+
+   console.log(randomNum);
+
+   console.log(Username);
+
+   chatbox.style.fontSize = '20px';
+
+  }
+
+  askbutton = document.getElementById("askbutton");
+
+  askbutton.addEventListener('click', running);
+
+ </script>
+
+</body>
+
+</html>
