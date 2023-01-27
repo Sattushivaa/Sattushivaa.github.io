@@ -1,161 +1,85 @@
+* { 
+  margin : 0; 
+  padding : 0;
+  box-sizing : border-box;
+}
 body {
     font-size: 15pt;
-    font-family: sans-serif;
-    margin: 0px;
-    background-attachment: fixed;
-    background-image: linear-gradient(transparent,#090E44,black),url(CITY.jpeg);
-    background-size: 150% auto;
-    color: white;
-    user-select: none;
+    min-height : 200vh;
+    text-align : center;
 }
-a {
-  color: white;
+#nav {
+  background : white; 
+  padding : 10px ; 
+  position : fixed; 
+  width : 100vw;
+  top : 0px;
+  z-index :10;
 }
-.navbar {
-  padding: 10px;
-  background: #000000BD;
-  position: sticky;
-  top: 0px;
-  height: 30px;
-  z-index: 50;
+#menu {
+  height : 0px ; 
+  overflow : hidden ; 
+  transition : all 300ms;
 }
-.navShow {
-  display: flex;
+#nav:hover > #menu {
+  height : 300px;
 }
-.brand {
-  font-size: 25px;
-  font-weight: 1000;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: white;
+#menu span {
+  display : block ;
+  padding : 10px;
 }
-.navbar-btn {
-  border: 1px solid white;
-  border-radius: 10px;
-  position: absolute;
-  right: 10px;
-  color: white;
-  padding: 7px;
-  margin-top: -4px;
-  transition: all 300ms;
-  z-index: 6;
+#intro {
+  background : #373737;
+  min-height : 300px;
+  padding : 100px 20px;
+  color : #B3B3B3;
 }
-.navbar-btn:hover {
-  background: white;
-  color: black;
+#intro h1 { 
+  color : white ;
+  text-align : center;
 }
-.shadow {
-  background-image: linear-gradient(transparent,#090E44,black),url(CITY.jpeg);
-  position: absolute;
-  width: 100%;
-  right: 0px;
-  height: calc(100%);
-  bottom: 0px;
-  z-index: -1;
-  transition: all 1000ms;
+.card {
+  padding : 10px;
+  margin : 10px;
+  box-shadow : 0px 0px 10px 0px #A8A8A8;
+  border-radius : 10px;
 }
-.char {
-  transition: all 1000ms;
-  opacity: 0;
-  margin-top: 0px;
-  background: white;
-  margin: 1px;
-  width: 10px;
-  display: inline-flexbox;
-  padding: 5px;
-  font-weight: 1000;
+#brand {
+  font-family : cursive; 
+  font-weight : bolder ;
 }
-#para {
-  left: 0px;
-  width: 60%;
-  left: 10%;
-  line-height: 40px;
-  color : black;
+.imp {
+  color : white;
+  font-size : 25px;
+  font-style : italic;
 }
-.shadow p {
-  color: white;
-  margin: 10px;
+#me {
+  width : 200px ; 
+  height : 200px ; 
+  border-radius : 50%; 
 }
-.divBtn {
-  color: white;
-  border-radius: 10px;
-  padding: 10px;
-  font-size: 30px;
-  border: 1px solid white;
-  display: inline-block;
-  margin: 10px;
-  transition: all 300ms;
+section {
+  max-width : 600px;
+  margin-left : auto ; 
+  margin-right : auto ; 
+  padding : 0px 10px;
 }
-.divBtn:hover {
-  color: black;
-  background: white;
+img {
+  max-width : 90vw;
 }
-#navbar-options {
-  background: #FFFFFF29;
-  position: fixed;
-  display: block;
-  top: 50px;
-  right: 1000px;
-  width: 300px;
-  height: 500px;
-  padding: 10px;
-  transition: all 300ms;
-  color: wheat;
-  opacity: 0;
-  backdrop-filter: blur(2px);
+.tch {
+  font-weight : bolder;
 }
-#navbar-options a {
-  background: #0000007D;
-  display: block;
-  padding: 10px;
-  border-radius: 0px;
-  transition: all 300ms;
-  margin: 5px;
-  text-decoration: none;
-  color: white;
-  /* border: 1px solid white; */
-  border-radius: 10px;
+dt {
+  font-weight : bold;
 }
-.navbar-btn:hover #navbar-options {
-  opacity: 1;
-  right: -11px;
+footer {
+  min-height : 300px ;
+  background : #373737;
+  margin-top : -10px;
+  padding-top : 50px;
+  color : #B3B3B3;
 }
-#content {
-  display: none;
-  padding: 10px;
-}
-.pin {
-  background: #0000001F;
-  margin: 20px;
-  border-radius: 10px;
-  padding: 10px;
-  backdrop-filter: blur(4px);
-  border: 1px solid #FFFFFF1F;
-  border-top: 1px solid #FFFFFF1F;
-  border-left: 1px solid #FFFFFF1F;
-}
-.btnSecond {
-  padding: 10px;
-  border: 1px solid white;
-  border-radius: 10px;
-  display: inline-block;
-  transition: all 300ms;
-  text-decoration: none;
-}
-.btnSecond:hover {
-  background: white;
-  color: black;
-  
-}
-#footer {
-  background: #414141;
-  color: white;
-  text-align: center;
-  padding: 10px;
-  display: none;
-  font-size: 15px;
-}
-#box {
-  transform-style: preserve-3d;
-  margin-top: 100px;
-  position: absolute;
+svg {
+  margin-bottom : 0px;
 }
